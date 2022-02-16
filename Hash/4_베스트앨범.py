@@ -15,8 +15,6 @@ def solution(genres, plays):
             sum += val[1]
         hashTable[key].append(sum)
 
-    print(hashTable)
-
     while len(hashTable) >= 1 :
         maxSum = 0
         maxGenre = ''
@@ -26,7 +24,6 @@ def solution(genres, plays):
                 maxSum = sum
                 maxGenre = key
         del hashTable[maxGenre][len(hashTable[maxGenre])-1]
-        print(maxGenre)
         hashTable[maxGenre].sort(key = lambda x : (-x[1], x[0]))
         if len(hashTable[maxGenre]) < 2:
             answer.append(hashTable[maxGenre][0][0])
